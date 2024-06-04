@@ -25,9 +25,7 @@ namespace IncidentManagement.WebAPI.DatabaseContext
                 .IsUnique();
 
             modelBuilder.Entity<Incident>()
-                .Property(i => i.IncidentName)
-                .ValueGeneratedOnAdd()
-                .HasValueGenerator<GuidValueGenerator>();
+                .HasKey(i => i.IncidentName);
 
             modelBuilder.Entity<Incident>()
                 .HasMany(i => i.Accounts)
