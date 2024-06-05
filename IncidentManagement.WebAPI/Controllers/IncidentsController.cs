@@ -64,7 +64,6 @@ create new case, for account and populate case description field
         [HttpPost]
         public async Task<IActionResult> CreateAccount([FromBody] AccountRequest request)
         {
-            // Check if contact exists
             var contact = await _context.Contacts
                 .FirstOrDefaultAsync(c => c.Email == request.ContactEmail);
 
@@ -73,13 +72,11 @@ create new case, for account and populate case description field
                 return Conflict("Contact already exists");
             }
 
-            // Create new account
             var account = new Account
             {
                 AccountName = request.AccountName
             };
 
-            // Create new contact
             contact = new Contact
             {
                 FirstName = request.ContactFirstName,
@@ -88,11 +85,13 @@ create new case, for account and populate case description field
                 Account = account
             };
 
+            account.Contacts.Add(contact);
+
             _context.Accounts.Add(account);
             _context.Contacts.Add(contact);
             await _context.SaveChangesAsync();
 
-            return Ok(account);
+            return Ok(new { account.AccountID, account.AccountName });
         }
 
         [HttpPost]
@@ -127,15 +126,16 @@ create new case, for account and populate case description field
 
             var incident = new Incident
             {
-                IncidentName = await IncidentNameGenerator.GenerateNextKey(_context),
+                IncidentName = IncidentNameGenerator.GenerateNextKey(_context).Result,
                 Description = request.IncidentDescription,
             };
 
             incident.Accounts.Add(account);
+            _context.Accounts.Add(account);
             _context.Incidents.Add(incident);
             await _context.SaveChangesAsync();
 
-            return Ok(incident);
+            return Ok(new { incident.IncidentName, incident.Description });
         }
     }
 }

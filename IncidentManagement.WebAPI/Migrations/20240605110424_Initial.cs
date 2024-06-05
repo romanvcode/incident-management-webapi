@@ -29,7 +29,7 @@ namespace IncidentManagement.WebAPI.Migrations
                     AccountID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     AccountName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    IncidentName = table.Column<string>(type: "nvarchar(450)", nullable: false)
+                    IncidentName = table.Column<string>(type: "nvarchar(450)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -38,8 +38,7 @@ namespace IncidentManagement.WebAPI.Migrations
                         name: "FK_Accounts_Incidents_IncidentName",
                         column: x => x.IncidentName,
                         principalTable: "Incidents",
-                        principalColumn: "IncidentName",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "IncidentName");
                 });
 
             migrationBuilder.CreateTable(

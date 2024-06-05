@@ -23,7 +23,6 @@ namespace IncidentManagement.WebAPI.Models
 
         [ForeignKey("Account")]
         public int AccountID { get; set; }
-        [JsonIgnore]
         public Account Account { get; set; } = null!;
     }
 }

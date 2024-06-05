@@ -16,9 +16,8 @@ namespace IncidentManagement.WebAPI.Models
 
         [ForeignKey("Incident")]
         public string? IncidentName { get; set; }
-        [JsonIgnore]
         public Incident Incident { get; set; } = null!;
 
-        public IEnumerable<Contact> Contacts { get; set; } = new List<Contact>();
+        public ICollection<Contact> Contacts { get; set; } = new List<Contact>();
     }
 }

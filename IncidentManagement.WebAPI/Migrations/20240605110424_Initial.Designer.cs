@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace IncidentManagement.WebAPI.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240604130711_Initial")]
+    [Migration("20240605110424_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -38,7 +38,6 @@ namespace IncidentManagement.WebAPI.Migrations
                         .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("IncidentName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("AccountID");
@@ -89,7 +88,6 @@ namespace IncidentManagement.WebAPI.Migrations
             modelBuilder.Entity("IncidentManagement.WebAPI.Models.Incident", b =>
                 {
                     b.Property<string>("IncidentName")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Description")
@@ -106,9 +104,7 @@ namespace IncidentManagement.WebAPI.Migrations
                 {
                     b.HasOne("IncidentManagement.WebAPI.Models.Incident", "Incident")
                         .WithMany("Accounts")
-                        .HasForeignKey("IncidentName")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("IncidentName");
 
                     b.Navigation("Incident");
                 });

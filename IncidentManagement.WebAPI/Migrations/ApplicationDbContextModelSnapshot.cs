@@ -44,7 +44,7 @@ namespace IncidentManagement.WebAPI.Migrations
 
                     b.HasIndex("IncidentName");
 
-                    b.ToTable("Accounts", (string)null);
+                    b.ToTable("Accounts");
                 });
 
             modelBuilder.Entity("IncidentManagement.WebAPI.Models.Contact", b =>
@@ -79,13 +79,12 @@ namespace IncidentManagement.WebAPI.Migrations
                     b.HasIndex("Email")
                         .IsUnique();
 
-                    b.ToTable("Contacts", (string)null);
+                    b.ToTable("Contacts");
                 });
 
             modelBuilder.Entity("IncidentManagement.WebAPI.Models.Incident", b =>
                 {
                     b.Property<string>("IncidentName")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Description")
@@ -95,7 +94,7 @@ namespace IncidentManagement.WebAPI.Migrations
 
                     b.HasKey("IncidentName");
 
-                    b.ToTable("Incidents", (string)null);
+                    b.ToTable("Incidents");
                 });
 
             modelBuilder.Entity("IncidentManagement.WebAPI.Models.Account", b =>
