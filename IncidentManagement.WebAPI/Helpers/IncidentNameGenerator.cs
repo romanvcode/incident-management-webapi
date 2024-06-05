@@ -1,4 +1,4 @@
-﻿using IncidentManagement.WebAPI.DatabaseContext;
+﻿using IncidentManagement.Infrastructure.DatabaseContext;
 using Microsoft.EntityFrameworkCore;
 
 namespace IncidentManagement.WebAPI.Helpers

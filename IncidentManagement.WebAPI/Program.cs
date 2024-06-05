@@ -1,6 +1,5 @@
-using IncidentManagement.WebAPI.DatabaseContext;
+using IncidentManagement.Infrastructure.DatabaseContext;
 using Microsoft.EntityFrameworkCore;
-using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 

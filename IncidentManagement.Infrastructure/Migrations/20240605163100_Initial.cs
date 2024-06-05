@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace IncidentManagement.WebAPI.Migrations
+namespace IncidentManagement.Infrastructure.Migrations
 {
     /// <inheritdoc />
     public partial class Initial : Migration

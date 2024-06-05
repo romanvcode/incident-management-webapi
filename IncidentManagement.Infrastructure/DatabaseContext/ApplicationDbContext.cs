@@ -1,8 +1,8 @@
-﻿using IncidentManagement.WebAPI.Models;
+﻿using IncidentManagement.Core.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ValueGeneration;
 
-namespace IncidentManagement.WebAPI.DatabaseContext
+namespace IncidentManagement.Infrastructure.DatabaseContext
 {
     public class ApplicationDbContext : DbContext
     {

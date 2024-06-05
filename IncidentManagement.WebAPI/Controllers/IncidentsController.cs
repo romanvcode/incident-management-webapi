@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using IncidentManagement.WebAPI.DatabaseContext;
-using IncidentManagement.WebAPI.Models;
+using IncidentManagement.Infrastructure.DatabaseContext;
+using IncidentManagement.Core.Models;
 using IncidentManagement.WebAPI.DTO;
 using IncidentManagement.WebAPI.Helpers;
 
