@@ -13,11 +13,11 @@ namespace IncidentManagement.Core.Services
     /// <summary>
     /// Account Service
     /// </summary>
-    public class AccountService : IAccountService
+    public class AccountAdderService : IAccountAdderService
     {
         private readonly IAccountRepository _accountRepository;
 
-        public AccountService(IAccountRepository accountRepository)
+        public AccountAdderService(IAccountRepository accountRepository)
         {
             _accountRepository = accountRepository;
         }

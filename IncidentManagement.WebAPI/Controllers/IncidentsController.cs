@@ -12,17 +12,19 @@ namespace IncidentManagement.WebAPI.Controllers
     [ApiController]
     public class IncidentsController : ControllerBase
     {
-        private readonly IIncidentService _incidentService;
+        private readonly IIncidentAdderService _incidentAdderService;
+        private readonly IIncidentGetterService _incidentGetterService;
 
-        public IncidentsController(IIncidentService incidentService)
+        public IncidentsController(IIncidentAdderService incidentAdderService, IIncidentGetterService incidentGetterService)
         {
-            _incidentService = incidentService;
+            _incidentAdderService = incidentAdderService;
+            _incidentGetterService = incidentGetterService;
         }
 
         [HttpGet]
         public async Task<IActionResult> GetIncidents()
         {
-            var incidents = await _incidentService.GetIncidents();
+            var incidents = await _incidentGetterService.GetIncidents();
 
             return Ok(incidents);
         }
@@ -30,7 +32,7 @@ namespace IncidentManagement.WebAPI.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateIncident([FromBody] IncidentRequest request)
         {
-            var incident = await _incidentService.CreateIncident(request);
+            var incident = await _incidentAdderService.CreateIncident(request);
 
             if (incident == null)
             {

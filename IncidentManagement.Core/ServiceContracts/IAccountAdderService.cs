@@ -6,7 +6,7 @@ namespace IncidentManagement.Core.ServiceContracts
     /// <summary>
     /// Interface for the Account Service
     /// </summary>
-    public interface IAccountService
+    public interface IAccountAdderService
     {
         /// <summary>
         /// Create an account

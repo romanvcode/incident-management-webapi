@@ -10,7 +10,7 @@ namespace IncidentManagement.Core.Models
 
         [Required]
         [StringLength(50)]
-        public string AccountName { get; set; }
+        public string? AccountName { get; set; }
 
         [ForeignKey("Incident")]
         public string? IncidentName { get; set; }

@@ -11,9 +11,9 @@ namespace IncidentManagement.WebAPI.Controllers
     [ApiController]
     public class AccountsController : ControllerBase
     {
-        private readonly IAccountService _accountService;
+        private readonly IAccountAdderService _accountService;
 
-        public AccountsController(IAccountService accountService)
+        public AccountsController(IAccountAdderService accountService)
         {
             _accountService = accountService;
         }

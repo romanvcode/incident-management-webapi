@@ -5,12 +5,11 @@ namespace IncidentManagement.Core.Models
     public class Incident
     {
         [Key]
-        //[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public string IncidentName { get; set; }
+        public string? IncidentName { get; set; }
 
         [Required]
         [StringLength(50)]
-        public string Description { get; set; }
+        public string? Description { get; set; }
 
         public ICollection<Account> Accounts { get; set; } = new List<Account>();
     }
