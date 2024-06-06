@@ -1,10 +1,8 @@
-﻿using Azure.Core;
-using IncidentManagement.Core.Models;
+﻿using IncidentManagement.Core.Models;
 using IncidentManagement.Core.RepositoryContracts;
 using IncidentManagement.Infrastructure.DatabaseContext;
 using IncidentManagement.WebAPI.DTO;
 using IncidentManagement.WebAPI.Helpers;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace IncidentManagement.Infrastructure.Repositories

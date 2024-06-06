@@ -18,12 +18,24 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 
 builder.Services.AddScoped<IIncidentRepository, IncidentRepository>();
 builder.Services.AddScoped<IIncidentAdderService, IncidentAdderService>();
+builder.Services.AddScoped<IIncidentGetterService, IncidentGetterService>();
 builder.Services.AddScoped<IAccountRepository, AccountRepository>();
 builder.Services.AddScoped<IAccountAdderService, AccountAdderService>();
 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
+
+if (app.Environment.IsDevelopment())
+{
+    app.UseDeveloperExceptionPage();
+}
+else
+{ 
+    app.UseExceptionHandler("/error");
+}
+
+app.UseRouting();
 
 app.UseHttpsRedirection();
 
