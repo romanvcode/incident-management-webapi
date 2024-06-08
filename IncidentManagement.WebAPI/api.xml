@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>IncidentManagement.WebAPI</name>
+    </assembly>
+    <members>
+        <member name="M:IncidentManagement.WebAPI.Controllers.AccountsController.CreateAccount(IncidentManagement.WebAPI.DTO.AccountRequest)">
+            <summary>
+            Create a new account (including contact).
+            </summary>
+            <param name="request">The account request.</param>
+            <returns>Returns the account ID and account name.</returns>
+        </member>
+        <member name="M:IncidentManagement.WebAPI.Controllers.IncidentsController.GetIncidents">
+            <summary>
+            Get all incidents (including account information).
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:IncidentManagement.WebAPI.Controllers.IncidentsController.CreateIncident(IncidentManagement.WebAPI.DTO.IncidentRequest)">
+            <summary>
+            Create a new incident.
+            </summary>
+            <param name="request">Incident request.</param>
+            <returns>Returns the incident name and description.</returns>
+        </member>
+    </members>
+</doc>

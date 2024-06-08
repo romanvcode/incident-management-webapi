@@ -1,9 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using IncidentManagement.Infrastructure.DatabaseContext;
-using IncidentManagement.Core.Models;
 using IncidentManagement.WebAPI.DTO;
-using IncidentManagement.WebAPI.Helpers;
 using IncidentManagement.Core.ServiceContracts;
 
 namespace IncidentManagement.WebAPI.Controllers
@@ -21,6 +17,10 @@ namespace IncidentManagement.WebAPI.Controllers
             _incidentGetterService = incidentGetterService;
         }
 
+        /// <summary>
+        /// Get all incidents (including account information).
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public async Task<IActionResult> GetIncidents()
         {
@@ -29,6 +29,11 @@ namespace IncidentManagement.WebAPI.Controllers
             return Ok(incidents);
         }
 
+        /// <summary>
+        /// Create a new incident.
+        /// </summary>
+        /// <param name="request">Incident request.</param>
+        /// <returns>Returns the incident name and description.</returns>
         [HttpPost]
         public async Task<IActionResult> CreateIncident([FromBody] IncidentRequest request)
         {

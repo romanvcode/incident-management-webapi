@@ -18,6 +18,11 @@ namespace IncidentManagement.WebAPI.Controllers
             _accountService = accountService;
         }
 
+        /// <summary>
+        /// Create a new account (including contact).
+        /// </summary>
+        /// <param name="request">The account request.</param>
+        /// <returns>Returns the account ID and account name.</returns>
         [HttpPost]
         public async Task<IActionResult> CreateAccount([FromBody] AccountRequest request)
         {
