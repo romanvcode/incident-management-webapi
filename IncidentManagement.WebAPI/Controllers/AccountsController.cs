@@ -7,12 +7,19 @@ using Microsoft.EntityFrameworkCore;
 
 namespace IncidentManagement.WebAPI.Controllers
 {
+    /// <summary>
+    /// Controller for account operations.
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class AccountsController : ControllerBase
     {
         private readonly IAccountAdderService _accountService;
 
+        /// <summary>
+        /// Constructor for the account controller.
+        /// </summary>
+        /// <param name="accountService"></param>
         public AccountsController(IAccountAdderService accountService)
         {
             _accountService = accountService;

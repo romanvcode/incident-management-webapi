@@ -2,11 +2,6 @@
 using IncidentManagement.Core.RepositoryContracts;
 using IncidentManagement.Core.ServiceContracts;
 using IncidentManagement.WebAPI.DTO;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace IncidentManagement.Core.Services
 {
@@ -22,6 +17,11 @@ namespace IncidentManagement.Core.Services
             _accountRepository = accountRepository;
         }
 
+        /// <summary>
+        /// Create Account
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
         public async Task<Account?> CreateAccount(AccountRequest request)
         {
             var account = await _accountRepository.CreateAccount(request);

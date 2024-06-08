@@ -4,6 +4,9 @@ using IncidentManagement.Core.ServiceContracts;
 
 namespace IncidentManagement.WebAPI.Controllers
 {
+    /// <summary>
+    /// Controller for incidents.
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class IncidentsController : ControllerBase
@@ -11,6 +14,11 @@ namespace IncidentManagement.WebAPI.Controllers
         private readonly IIncidentAdderService _incidentAdderService;
         private readonly IIncidentGetterService _incidentGetterService;
 
+        /// <summary>
+        /// Constructor for incidents controller.
+        /// </summary>
+        /// <param name="incidentAdderService"></param>
+        /// <param name="incidentGetterService"></param>
         public IncidentsController(IIncidentAdderService incidentAdderService, IIncidentGetterService incidentGetterService)
         {
             _incidentAdderService = incidentAdderService;

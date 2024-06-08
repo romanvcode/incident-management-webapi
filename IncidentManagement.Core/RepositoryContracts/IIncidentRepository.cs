@@ -1,6 +1,5 @@
 ﻿using IncidentManagement.Core.Models;
 using IncidentManagement.WebAPI.DTO;
-using Microsoft.AspNetCore.Mvc;
 
 namespace IncidentManagement.Core.RepositoryContracts
 {

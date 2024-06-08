@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace IncidentManagement.WebAPI.DTO
+﻿namespace IncidentManagement.WebAPI.DTO
 {
     public class AccountRequest
     {

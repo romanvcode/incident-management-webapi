@@ -1,6 +1,5 @@
 ﻿using IncidentManagement.Core.Models;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.ValueGeneration;
 
 namespace IncidentManagement.Infrastructure.DatabaseContext
 {
